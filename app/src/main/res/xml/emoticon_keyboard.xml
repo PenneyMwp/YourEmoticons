@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:keyWidth="100%p"
-    android:keyHeight="70dp"
+    android:keyHeight="55dp"
     android:horizontalGap="2px"
     android:verticalGap="2px">
 
@@ -15,8 +15,23 @@
         <Key android:codes="3" android:keyLabel="(╯‵□′)╯︵┴─┴" android:keyWidth="50%" android:keyEdgeFlags="left"></Key>
         <Key android:codes="4" android:keyLabel=" ┬─┬ ノ( ' - 'ノ)" android:keyWidth="50%"></Key>
     </Row>
-    <Row android:rowEdgeFlags="bottom">
+    <Row>
         <Key android:codes="1" android:keyLabel="¯\\_(ツ)_/¯" android:keyWidth="50%" android:keyEdgeFlags="left"></Key>
         <Key android:codes="2" android:keyLabel="╮(╯▽╰)╭" android:keyWidth="50%"></Key>
+    </Row>
+    <Row android:rowEdgeFlags="bottom">
+        <Key
+            android:codes="-1"
+            android:keyLabel="SPACE"
+            android:keyWidth="85%"
+            android:keyEdgeFlags="left"
+            android:keyHeight="40dp"
+            android:isRepeatable="true"></Key>
+        <Key
+            android:codes="-2"
+            android:keyLabel="DEL"
+            android:keyWidth="15%"
+            android:keyHeight="40dp"
+            android:isRepeatable="true"></Key>
     </Row>
 </Keyboard>

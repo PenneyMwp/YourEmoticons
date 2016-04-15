@@ -6,6 +6,8 @@ import android.inputmethodservice.KeyboardView;
 import android.view.View;
 import android.view.inputmethod.InputConnection;
 
+import java.util.Stack;
+
 /**
  *
  * Created by Zhibin on 4/14/2016.
@@ -22,8 +24,10 @@ public class YourEmoticons extends InputMethodService implements KeyboardView.On
         kv = (KeyboardView)getLayoutInflater().inflate(R.layout.keyboard, null);
         keyboard = new Keyboard(this, R.xml.emoticon_keyboard);
         kv.setKeyboard(keyboard);
+        kv.setPreviewEnabled(false);
         kv.setOnKeyboardActionListener(this);
         kv.invalidateAllKeys();
+        inputHist = new Stack<>();
         return kv;
     }
 
@@ -40,7 +44,7 @@ public class YourEmoticons extends InputMethodService implements KeyboardView.On
     @Override
     public void onKey(int i, int[] ints) {
         InputConnection ic = getCurrentInputConnection();
-        String emoString;
+        String emoString = "";
         switch(i){
             case 1:
                 emoString = EMOTICON_1;
@@ -60,11 +64,18 @@ public class YourEmoticons extends InputMethodService implements KeyboardView.On
             case 6:
                 emoString = EMOTICON_6;
                 break;
+            case -1: //space
+                emoString = " ";
+                break;
+            case -2: //delete
+                ic.deleteSurroundingText(1, 0);
+                break;
             default:
                 emoString = "";
         }
 
-        ic.commitText(emoString, 1);
+        if(emoString.length() > 0)
+            ic.commitText(emoString, 1);
     }
 
     @Override
@@ -94,4 +105,5 @@ public class YourEmoticons extends InputMethodService implements KeyboardView.On
 
     private KeyboardView kv;
     private Keyboard keyboard;
+    Stack<Integer> inputHist;
 }
