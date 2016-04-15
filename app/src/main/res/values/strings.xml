@@ -2,10 +2,4 @@
     <string name="app_name">YourEmoticons</string>
     <string name="your_emoticons">Your Emoticons</string>
     <string name="subtype_en_US">English (US)</string>
-    <string name="emoticon_1">¯\_(ツ)_/¯</string>
-    <string name="emoticon_2">╮(╯▽╰)╭ </string>
-    <string name="emoticon_3">(╯‵□′)╯︵┴─┴</string>
-    <string name="emoticon_4"> ┬─┬ ノ( ' - 'ノ)</string>
-    <string name="emoticon_5"> ∠( ᐛ 」∠)＿</string>
-    <string name="emoticon_6">_(:3 」∠ )_</string>
 </resources>

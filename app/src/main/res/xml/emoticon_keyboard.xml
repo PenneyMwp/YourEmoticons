@@ -3,17 +3,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:keyWidth="100%p"
-    android:keyHeight="120dp"
+    android:keyHeight="70dp"
     android:horizontalGap="2px"
     android:verticalGap="2px">
 
     <Row>
-        <Key android:codes="5,6" android:keyLabel="∠( ᐛ 」∠)＿" android:keyWidth="100%"></Key>
+        <Key android:codes="5" android:keyLabel="∠( ᐛ 」∠)＿" android:keyWidth="50%" android:keyEdgeFlags="left"></Key>
+        <Key android:codes="6" android:keyLabel="_(:3 」∠ )_" android:keyWidth="50%"></Key>
     </Row>
     <Row>
-        <Key android:codes="3,4" android:keyLabel="(╯‵□′)╯︵┴─┴" android:keyWidth="100%"></Key>
+        <Key android:codes="3" android:keyLabel="(╯‵□′)╯︵┴─┴" android:keyWidth="50%" android:keyEdgeFlags="left"></Key>
+        <Key android:codes="4" android:keyLabel=" ┬─┬ ノ( ' - 'ノ)" android:keyWidth="50%"></Key>
     </Row>
-    <Row>
-        <Key android:codes="1,2" android:keyLabel="¯\_(ツ)_/¯" android:keyWidth="100%"></Key>
+    <Row android:rowEdgeFlags="bottom">
+        <Key android:codes="1" android:keyLabel="¯\\_(ツ)_/¯" android:keyWidth="50%" android:keyEdgeFlags="left"></Key>
+        <Key android:codes="2" android:keyLabel="╮(╯▽╰)╭" android:keyWidth="50%"></Key>
     </Row>
 </Keyboard>
