@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Keyboard xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:keyWidth="100%p"
+    android:keyHeight="120dp"
+    android:horizontalGap="2px"
+    android:verticalGap="2px">
+
+    <Row>
+        <Key android:codes="5,6" android:keyLabel="∠( ᐛ 」∠)＿" android:keyWidth="100%"></Key>
+    </Row>
+    <Row>
+        <Key android:codes="3,4" android:keyLabel="(╯‵□′)╯︵┴─┴" android:keyWidth="100%"></Key>
+    </Row>
+    <Row>
+        <Key android:codes="1,2" android:keyLabel="¯\_(ツ)_/¯" android:keyWidth="100%"></Key>
+    </Row>
+</Keyboard>
