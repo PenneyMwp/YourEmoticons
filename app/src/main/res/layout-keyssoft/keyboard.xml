@@ -6,5 +6,6 @@
     android:layout_height="wrap_content"
     android:layout_alignParentBottom="true"
     android:keyBackground="@drawable/keybackground"
-    android:keyTextColor="#ffffff"
+    android:keyTextColor="#333333"
+    android:labelTextSize="18sp"
     />

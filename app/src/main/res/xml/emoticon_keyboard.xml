@@ -4,8 +4,8 @@
     android:layout_height="match_parent"
     android:keyWidth="100%p"
     android:keyHeight="55dp"
-    android:horizontalGap="2px"
-    android:verticalGap="2px">
+    android:horizontalGap="0px"
+    android:verticalGap="0px">
 
     <Row>
         <Key android:codes="5" android:keyLabel="∠( ᐛ 」∠)＿" android:keyWidth="50%" android:keyEdgeFlags="left"></Key>
