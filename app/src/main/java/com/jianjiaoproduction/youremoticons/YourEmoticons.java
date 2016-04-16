@@ -26,6 +26,7 @@ public class YourEmoticons extends InputMethodService implements KeyboardView.On
         kv.setKeyboard(keyboard);
         kv.setPreviewEnabled(false);
         kv.setOnKeyboardActionListener(this);
+
         kv.invalidateAllKeys();
         inputHist = new Stack<>();
         return kv;
