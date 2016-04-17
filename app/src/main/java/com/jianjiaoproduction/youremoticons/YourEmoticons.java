@@ -1,10 +1,16 @@
 package com.jianjiaoproduction.youremoticons;
 
+import android.app.Dialog;
 import android.inputmethodservice.InputMethodService;
 import android.inputmethodservice.Keyboard;
 import android.inputmethodservice.KeyboardView;
+import android.os.IBinder;
+import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.Window;
 import android.view.inputmethod.InputConnection;
+import android.view.inputmethod.InputMethodManager;
 
 import java.util.Stack;
 
@@ -19,6 +25,13 @@ public class YourEmoticons extends InputMethodService implements KeyboardView.On
     final String EMOTICON_4 = "┬─┬ ノ( ' - 'ノ)";
     final String EMOTICON_5 = "∠( ᐛ 」∠)＿";
     final String EMOTICON_6 = "_(:3 」∠ )_";
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        mInputMethodManager = (InputMethodManager)getSystemService(INPUT_METHOD_SERVICE);
+    }
+
     @Override
     public View onCreateInputView() {
         kv = (KeyboardView)getLayoutInflater().inflate(R.layout.keyboard, null);
@@ -71,6 +84,13 @@ public class YourEmoticons extends InputMethodService implements KeyboardView.On
             case -2: //delete
                 ic.deleteSurroundingText(1, 0);
                 break;
+            case -3: //language switch
+                mInputMethodManager.switchToNextInputMethod(getToken(), false /* onlyCurrentIme */);
+                return;
+            case -4://return
+                //TODO: Need to handle search event
+                ic.sendKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_ENTER));
+                return;
             default:
                 emoString = "";
         }
@@ -104,7 +124,23 @@ public class YourEmoticons extends InputMethodService implements KeyboardView.On
 
     }
 
+    private IBinder getToken() {
+        final Dialog dialog = getWindow();
+        if (dialog == null) {
+            Log.e("GET_TOKEN", "Not able to get dialog");
+            return null;
+        }
+        final Window window = dialog.getWindow();
+        if (window == null) {
+            Log.e("GET_TOKEN", "Not able to get window");
+            return null;
+        }
+        Log.e("GET_TOKEN", window.getAttributes().token.toString());
+        return window.getAttributes().token;
+    }
+
     private KeyboardView kv;
     private Keyboard keyboard;
     Stack<Integer> inputHist;
+    private InputMethodManager mInputMethodManager;
 }

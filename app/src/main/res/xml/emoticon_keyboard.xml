@@ -21,17 +21,29 @@
     </Row>
     <Row android:rowEdgeFlags="bottom">
         <Key
+            android:codes="-3"
+            android:keyIcon="@drawable/bp_lang_switch"
+            android:keyEdgeFlags="left"
+            android:keyWidth="10%"
+            android:keyHeight="40dp"></Key>
+        <Key
             android:codes="-1"
             android:keyLabel="SPACE"
-            android:keyWidth="85%"
-            android:keyEdgeFlags="left"
+            android:keyWidth="65%"
             android:keyHeight="40dp"
             android:isRepeatable="true"></Key>
         <Key
             android:codes="-2"
-            android:keyLabel="DEL"
-            android:keyWidth="15%"
+            android:keyIcon="@drawable/bp_backspace"
+            android:keyWidth="10%"
             android:keyHeight="40dp"
             android:isRepeatable="true"></Key>
+        <Key
+            android:codes="-4"
+            android:keyIcon="@drawable/bp_key_return"
+            android:keyWidth="15%"
+            android:keyHeight="40dp"
+            android:keyEdgeFlags="right"
+            ></Key>
     </Row>
 </Keyboard>

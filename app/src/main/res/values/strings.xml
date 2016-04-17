@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">YourEmoticons</string>
     <string name="your_emoticons">Your Emoticons</string>
-    <string name="subtype_en_US">English (US)</string>
+    <string name="subtype_en_US">Emoticon</string>
 </resources>
