@@ -56,6 +56,18 @@ public class YourEmoticons extends InputMethodService implements KeyboardView.On
     }
 
     @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        //Handling the key events in
+        if(keyCode == KeyEvent.KEYCODE_SEARCH){
+            if(event.equals(KeyEvent.KEYCODE_SEARCH)) {
+                onKey(-5, null);
+                return true;
+            }
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
+    @Override
     public void onKey(int i, int[] ints) {
         InputConnection ic = getCurrentInputConnection();
         String emoString = "";
@@ -88,8 +100,10 @@ public class YourEmoticons extends InputMethodService implements KeyboardView.On
                 mInputMethodManager.switchToNextInputMethod(getToken(), false /* onlyCurrentIme */);
                 return;
             case -4://return
-                //TODO: Need to handle search event
                 ic.sendKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_ENTER));
+                return;
+            case -5://search
+                ic.sendKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_SEARCH));
                 return;
             default:
                 emoString = "";
