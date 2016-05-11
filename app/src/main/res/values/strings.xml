@@ -2,4 +2,7 @@
     <string name="app_name">YourEmoticons</string>
     <string name="your_emoticons">Your Emoticons</string>
     <string name="subtype_en_US">Emoticon</string>
+    <string name="label_go_key">GO</string>
+    <string name="label_next_key">NEXT</string>
+
 </resources>

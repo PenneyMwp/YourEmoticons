@@ -5,10 +5,12 @@ import android.inputmethodservice.InputMethodService;
 import android.inputmethodservice.Keyboard;
 import android.inputmethodservice.KeyboardView;
 import android.os.IBinder;
+import android.text.InputType;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
+import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputConnection;
 import android.view.inputmethod.InputMethodManager;
 
@@ -26,17 +28,30 @@ public class YourEmoticons extends InputMethodService implements KeyboardView.On
     final String EMOTICON_5 = "∠( ᐛ 」∠)＿";
     final String EMOTICON_6 = "_(:3 」∠ )_";
 
+
     @Override
     public void onCreate() {
         super.onCreate();
         mInputMethodManager = (InputMethodManager)getSystemService(INPUT_METHOD_SERVICE);
+
+    }
+
+    @Override
+    public void onInitializeInterface(){
+        mEmoticonKeyboard = new YourEmoticonsKeyboard(this, R.xml.emoticon_keyboard);
+    }
+
+    @Override
+    public void onStartInput(EditorInfo info, boolean restarting) {
+        super.onStartInput(info, restarting);
+
+        mEmoticonKeyboard.setImeOptions(getResources(), info.imeOptions);
     }
 
     @Override
     public View onCreateInputView() {
         kv = (KeyboardView)getLayoutInflater().inflate(R.layout.keyboard, null);
-        keyboard = new Keyboard(this, R.xml.emoticon_keyboard);
-        kv.setKeyboard(keyboard);
+        kv.setKeyboard(mEmoticonKeyboard);
         kv.setPreviewEnabled(false);
         kv.setOnKeyboardActionListener(this);
 
@@ -53,18 +68,6 @@ public class YourEmoticons extends InputMethodService implements KeyboardView.On
     @Override
     public void onRelease(int i) {
 
-    }
-
-    @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        //Handling the key events in
-        if(keyCode == KeyEvent.KEYCODE_SEARCH){
-            if(event.equals(KeyEvent.KEYCODE_SEARCH)) {
-                onKey(-5, null);
-                return true;
-            }
-        }
-        return super.onKeyDown(keyCode, event);
     }
 
     @Override
@@ -101,9 +104,7 @@ public class YourEmoticons extends InputMethodService implements KeyboardView.On
                 return;
             case -4://return
                 ic.sendKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_ENTER));
-                return;
-            case -5://search
-                ic.sendKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_SEARCH));
+                ic.sendKeyEvent(new KeyEvent(KeyEvent.ACTION_UP, KeyEvent.KEYCODE_ENTER));
                 return;
             default:
                 emoString = "";
@@ -154,7 +155,7 @@ public class YourEmoticons extends InputMethodService implements KeyboardView.On
     }
 
     private KeyboardView kv;
-    private Keyboard keyboard;
+    private YourEmoticonsKeyboard mEmoticonKeyboard;
     Stack<Integer> inputHist;
     private InputMethodManager mInputMethodManager;
 }
