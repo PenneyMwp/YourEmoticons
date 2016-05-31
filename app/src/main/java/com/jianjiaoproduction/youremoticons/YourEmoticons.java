@@ -1,6 +1,8 @@
 package com.jianjiaoproduction.youremoticons;
 
+import android.app.ActionBar;
 import android.app.Dialog;
+import android.content.Intent;
 import android.inputmethodservice.InputMethodService;
 import android.inputmethodservice.Keyboard;
 import android.inputmethodservice.KeyboardView;
@@ -10,6 +12,7 @@ import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
+import android.view.WindowManager;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputConnection;
 import android.view.inputmethod.InputMethodManager;
@@ -21,6 +24,7 @@ import java.util.Stack;
  * Created by Zhibin on 4/14/2016.
  */
 public class YourEmoticons extends InputMethodService implements KeyboardView.OnKeyboardActionListener{
+    //TODO: refactor to have an array to hold the predefined emoticons, and another array to hold current emoticons.
     final String EMOTICON_1 = "¯\\_(ツ)_/¯";
     final String EMOTICON_2 = "╮(╯▽╰)╭";
     final String EMOTICON_3 = "(╯‵□′)╯︵┴─┴";
@@ -44,7 +48,6 @@ public class YourEmoticons extends InputMethodService implements KeyboardView.On
     @Override
     public void onStartInput(EditorInfo info, boolean restarting) {
         super.onStartInput(info, restarting);
-
         mEmoticonKeyboard.setImeOptions(getResources(), info.imeOptions);
     }
 
@@ -54,7 +57,6 @@ public class YourEmoticons extends InputMethodService implements KeyboardView.On
         kv.setKeyboard(mEmoticonKeyboard);
         kv.setPreviewEnabled(false);
         kv.setOnKeyboardActionListener(this);
-
         kv.invalidateAllKeys();
         inputHist = new Stack<>();
         return kv;
@@ -105,6 +107,11 @@ public class YourEmoticons extends InputMethodService implements KeyboardView.On
             case -4://return
                 ic.sendKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_ENTER));
                 ic.sendKeyEvent(new KeyEvent(KeyEvent.ACTION_UP, KeyEvent.KEYCODE_ENTER));
+                return;
+            case -5://setting
+                Intent intent = new Intent(this, SettingActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
                 return;
             default:
                 emoString = "";

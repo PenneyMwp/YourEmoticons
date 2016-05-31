@@ -29,9 +29,14 @@
         <Key
             android:codes="-1"
             android:keyLabel="SPACE"
-            android:keyWidth="65%"
+            android:keyWidth="55%"
             android:keyHeight="40dp"
             android:isRepeatable="true"></Key>
+        <Key
+            android:codes="-5"
+            android:keyIcon="@drawable/bp_setting"
+            android:keyWidth="10%"
+            android:keyHeight="40dp"></Key>
         <Key
             android:codes="-2"
             android:keyIcon="@drawable/bp_backspace"

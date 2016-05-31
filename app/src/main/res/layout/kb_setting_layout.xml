@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="bottom"
+    android:orientation="vertical">
+
+    <TableRow
+        android:layout_height="75dp">
+        <TextView
+            android:id="@+id/tx_key5"
+            android:layout_column="1"
+            android:layout_weight="0.5"
+            android:width="0px"
+            android:height="75dp"
+            android:background="@drawable/sl_tv_setting"
+            android:padding="3dip"
+            android:text="test5"
+            android:gravity="center"
+            android:onClick="settingHandler"/>
+
+        <TextView
+            android:id="@+id/tx_key6"
+            android:layout_column="2"
+            android:layout_weight="0.5"
+            android:height="75dp"
+            android:width="0px"
+            android:background="@drawable/sl_tv_setting"
+            android:gravity="center"
+            android:padding="3dip"
+            android:text="text6"
+            android:onClick="settingHandler"
+            />
+    </TableRow>
+    <TableRow
+        android:layout_height="75dp">
+        <TextView
+            android:id="@+id/tx_key3"
+            android:layout_column="1"
+            android:layout_weight="0.5"
+            android:width="0px"
+            android:height="75dp"
+            android:background="@drawable/sl_tv_setting"
+            android:padding="3dip"
+            android:text="test3"
+            android:gravity="center"
+            android:onClick="settingHandler"/>
+
+        <TextView
+            android:id="@+id/tx_key4"
+            android:layout_column="2"
+            android:layout_weight="0.5"
+            android:width="0px"
+            android:background="@drawable/sl_tv_setting"
+            android:gravity="center"
+            android:height="75dp"
+            android:padding="3dip"
+            android:text="text4"
+            android:onClick="settingHandler"
+            />
+    </TableRow>
+
+    <TableRow
+        android:layout_height="75dp">
+        <TextView
+            android:id="@+id/tx_key1"
+            android:layout_column="1"
+            android:layout_weight="0.5"
+            android:width="0px"
+            android:height="75dp"
+            android:background="@drawable/sl_tv_setting"
+            android:padding="3dip"
+            android:text="test1"
+            android:gravity="center"
+            android:onClick="settingHandler"/>
+
+        <TextView
+            android:id="@+id/tx_key2"
+            android:layout_column="2"
+            android:layout_weight="0.5"
+            android:width="0px"
+            android:background="@drawable/sl_tv_setting"
+            android:gravity="center"
+            android:height="75dp"
+            android:padding="3dip"
+            android:text="text2"
+            android:onClick="settingHandler"
+            />
+    </TableRow>
+
+</TableLayout>

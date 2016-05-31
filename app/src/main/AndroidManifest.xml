@@ -13,6 +13,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="com.jianjiaoproduction.youremoticons.SettingActivity" android:label="Your Emoticons -- Setting"/>
         <service
             android:name=".YourEmoticons"
             android:label="@string/your_emoticons"
