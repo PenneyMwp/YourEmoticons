@@ -1,4 +1,4 @@
-package com.jianjiaoproduction.youremoticons;
+package com.jianjiaoproduction.youremoticons.keyboard;
 
 import android.app.ActionBar;
 import android.content.Context;
@@ -6,6 +6,8 @@ import android.content.res.Resources;
 import android.content.res.XmlResourceParser;
 import android.inputmethodservice.Keyboard;
 import android.view.inputmethod.EditorInfo;
+
+import com.jianjiaoproduction.youremoticons.R;
 
 /**
  * Created by zhibzhang on 5/11/2016.

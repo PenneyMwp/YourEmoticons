@@ -1,21 +1,20 @@
-package com.jianjiaoproduction.youremoticons;
+package com.jianjiaoproduction.youremoticons.keyboard;
 
-import android.app.ActionBar;
 import android.app.Dialog;
 import android.content.Intent;
 import android.inputmethodservice.InputMethodService;
-import android.inputmethodservice.Keyboard;
 import android.inputmethodservice.KeyboardView;
 import android.os.IBinder;
-import android.text.InputType;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
-import android.view.WindowManager;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputConnection;
 import android.view.inputmethod.InputMethodManager;
+
+import com.jianjiaoproduction.youremoticons.activities.SettingActivity;
+import com.jianjiaoproduction.youremoticons.R;
 
 import java.util.Stack;
 

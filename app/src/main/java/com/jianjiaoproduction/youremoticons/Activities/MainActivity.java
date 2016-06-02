@@ -1,4 +1,4 @@
-package com.jianjiaoproduction.youremoticons;
+package com.jianjiaoproduction.youremoticons.activities;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -6,7 +6,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.RelativeLayout;
 
+import com.jianjiaoproduction.youremoticons.R;
+
 /**
+ * Main activity class for Your Emoticons
  * Created by zhibzhang on 5/10/2016.
  */
 public class MainActivity extends Activity{

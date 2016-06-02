@@ -1,9 +1,11 @@
-package com.jianjiaoproduction.youremoticons;
+package com.jianjiaoproduction.youremoticons.activities;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+
+import com.jianjiaoproduction.youremoticons.R;
 
 /**
  * Make the keyboard configurable. Provide interfaces for user
